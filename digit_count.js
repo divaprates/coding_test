@@ -10,12 +10,24 @@
  * [1, 1, 0, 0, 0, 1, 1, 1, 1, 1]
  * 
  * DADOS DO CANDIDATO
- * NOME:
- * EMAIL:
+ * NOME: DIVA SILVA PRATES
+ * EMAIL: divasilvaprates@gmail.com
 */
 
 const digit_count = (start, end) => {
-  
+  let digitos = []; //vetor que armazena os dígitos
+  let j = 0; //variável para percorrer digitos[]
+  for (var i = start; i <= end; i++){ //numeros entre start e end
+    var d = i.toString().split(''); //dividir cada número em dígitos
+    for(var a=0; a<d.length; a++){ //for auxiliar, caso o numero possua mais de um dígito
+      digitos[j] = d[a]; //guardar cada digíto en digitos[]
+      j++; //ir para a próxima posição de digitos[]
+    }
+  }
+  let cont = [0,0,0,0,0,0,0,0,0,0] //inicializar vetor que representa os digitos de 0 - 9
+  for(var i=0; i<digitos.length; i++){ //percorrer digitos[]
+     cont[digitos[i]] += 1; //lógica para contar os dígitos e armazenar o resultado em cont[]
+  }
 }
 
 module.exports = digit_count;
